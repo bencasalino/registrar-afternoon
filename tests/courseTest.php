@@ -19,8 +19,8 @@
     {
         protected function tearDown()
         {
-        //    Course::deleteAll();
-        //    Student::deleteAll();
+           Course::deleteAll();
+           Student::deleteAll();
         }
 
         function testGetCourseName()
@@ -66,6 +66,8 @@
             $result = Course::getAll();
             $this->assertEquals($test_course, $result[0]);
         }
+
+        
 
       }
 
