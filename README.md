@@ -1,13 +1,11 @@
 ##
-# Silex Twig Template
+# Registrar App
 
-##### _Template for getting up and going with a Silex/Twig app._
-
-#### Mike Chastain
+#### By Mike Chastain and Sam Martinez
 
 ## Description
 
-_Add a Description Here_
+This application gives the registrar the ability to add a student and their date of enrollment. It will also give the registrar the ability to add students to specific courses which have names, numbers associated with each course.
 
 ## Setup
 
@@ -15,6 +13,14 @@ Add your setup information instructions here.
 
 ```
 $ composer install
+```
+$ MySQL
+```
+$ Silex
+```
+$ PHPUnit
+```
+$ Twig
 ```
 
 _then start up a local PHP server from within the "web" directory within the project's folder and point your browser to whatever local host server you have created._  
@@ -31,7 +37,7 @@ _This project makes use of PHP, the testing framework [PHPUnit](https://phpunit.
 
 
 
-Copyright (c) 2015 Mike Chastain
+Copyright (c) 2015 Mike Chastain and Sam Martinez 
 
 This software is licensed under the MIT license.
 
