@@ -23,17 +23,33 @@
             Student::deleteAll();
         }
 
-
-        function test_course()
+        function testGetCourseName()
         {
-            $test_myClass = new Course();
+            //Arrange
+            $course_name = "HISTORY";
+            $number = 101;
+            $test_course = new Course($course_name, $number);
 
-            $result = $test_course->myFunction();
-            $this->assertEquals("data", $result);
+            //Act
+            $result = $test_course->getCourseName();
+
+            //Assert
+            $this->assertEquals($course_name, $result);
         }
 
-    
+        function testGetNumber()
+        {
+            //Arrange
+            $course_name = "HISTORY";
+            $number = 101;
+            $test_course = new Course($course_name, $number);
 
+            //Act
+            $result = $test_course->getNumber();
+
+            //Assert
+            $this->assertEquals($number, $result);
+        }
 
       }
 
