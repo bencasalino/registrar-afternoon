@@ -7,7 +7,7 @@
       private $date_of_enrollment;
 
       //Constructors
-      __construct($student_name,$date_of_enrollment,$id)
+       function __construct($student_name,$date_of_enrollment,$id)
       {
         $this->student_name = $student_name;
         $this->date_of_enrollment = $date_of_enrollment;
@@ -43,7 +43,14 @@
           return $this->id;
       }
 
-    }
+      //STATIC
+
+      static function deleteAll()
+      {
+          $GLOBALS['DB']->exec("DELETE FROM students;");
+      }
+
+  }//end class
 
 
  ?>

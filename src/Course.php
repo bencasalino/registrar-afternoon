@@ -8,7 +8,7 @@
 
 
         //Constructors
-        __construct($course_name,$number,$id)
+        function __construct($course_name,$number,$id)
         {
           $this->course_name = $course_name;
           $this->number = $number;
@@ -41,6 +41,14 @@
         {
             return $this->id;
         }
+
+        //STATIC
+
+        static function deleteAll()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM courses;");
+        }
+
 
 
     }
