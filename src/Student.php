@@ -46,7 +46,7 @@
       function save()
       {
 
-          $GLOBALS['DB']->query("INSERT INTO students (name, date_of_enrollment) VALUES ('{$this->getStudentName()}','{$this->getDateOfEnrollment()}');");
+          $GLOBALS['DB']->exec("INSERT INTO students (name, date_of_enrollment) VALUES ('{$this->getStudentName()}', '{$this->getDateOfEnrollment()}');");
           $this->id = $GLOBALS['DB']->lastInsertId();
       }
 
