@@ -4,6 +4,7 @@
   </head>
   <body>
     <h1>Update the {{ student.getName }} student </h1>
+    <center>
 
     <form action="/students/{{ student.getId }}" method="post">
       <input name="_method" type="hidden" value="patch">
@@ -20,6 +21,8 @@
 
         <button type="submit">Delete this student</button>
       </form>
+
+      <p><a href='/'>Home</a></p>
 
   </body>
 </html>
