@@ -19,8 +19,8 @@
     {
         protected function tearDown()
         {
-            Course::deleteAll();
-            Student::deleteAll();
+        //    Course::deleteAll();
+        //    Student::deleteAll();
         }
 
         function testGetCourseName()
@@ -37,7 +37,7 @@
             $this->assertEquals($course_name, $result);
         }
 
-        function testGetNumber()
+        function testGetCourseNumber()
         {
             //Arrange
             $course_name = "HISTORY";
@@ -45,10 +45,26 @@
             $test_course = new Course($course_name, $number);
 
             //Act
-            $result = $test_course->getNumber();
+            $result = $test_course->getCourseNumber();
 
             //Assert
             $this->assertEquals($number, $result);
+        }
+
+        function testSave()
+        {
+            //Arrange
+            $course_name = "HISTORY";
+            $number = 101;
+            $test_course = new Course($course_name, $number);
+            //var_dump($test_course);
+
+            //Act
+            $test_course->save();
+
+            //Assert
+            $result = Course::getAll();
+            $this->assertEquals($test_course, $result[0]);
         }
 
       }
