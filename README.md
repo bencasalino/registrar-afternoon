@@ -1,7 +1,7 @@
 ##
 # Registrar App
 
-#### By Mike Chastain and Sam Martinez, worked on during the afternoon on WEEK 4 Day 2, by Ben Casalino and Chris Swan. 
+#### By Mike Chastain and Sam Martinez, worked on during the afternoon on WEEK 4 Day 2, by Ben Casalino and Chris Swan.
 
 ## Description
 
@@ -37,7 +37,7 @@ _This project makes use of PHP, the testing framework [PHPUnit](https://phpunit.
 
 
 
-Copyright (c) 2015 Mike Chastain and Sam Martinez
+Copyright (c) 2015 Mike Chastain, Sam Martinez, Ben Casalino and Chris Swan. 
 
 This software is licensed under the MIT license.
 
