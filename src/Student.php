@@ -7,7 +7,7 @@
       private $date_of_enrollment;
 
       //Constructors
-       function __construct($student_name,$date_of_enrollment,$id)
+       function __construct($student_name,$date_of_enrollment,$id = null)
       {
         $this->student_name = $student_name;
         $this->date_of_enrollment = $date_of_enrollment;
