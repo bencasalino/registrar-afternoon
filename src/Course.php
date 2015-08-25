@@ -8,7 +8,7 @@
 
 
         //Constructors
-        function __construct($course_name,$course_number,$id = null)
+        function __construct($course_name, $course_number, $id = null)
         {
           $this->course_name = $course_name;
           $this->course_number = $course_number;

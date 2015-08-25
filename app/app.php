@@ -1,20 +1,30 @@
 <?php
     require_once __DIR__."/../vendor/autoload.php";
-    require_once __DIR__."/../src/myClass.php";
-
-    session_start();
-    if (empty($_SESSION['elements'])) {
-    $_SESSION['elements'] = array();
-    }
+    require_once __DIR__."/../src/Course.php";
+    require_once __DIR__."/../src/Student.php";
 
     $app = new Silex\Application();
-    $app['debug']  = true;
-    $app->register(new Silex\Provider\TwigServiceProvider(),array('twig.path' => __DIR__.'/../views'));
+    $app['debug'] = true;
 
-    $app->get("/", function() use ($app){
-      $mystring = "Data from the app display in twig";
-            return $app['twig']->render('template.html.twig', array('data' => $mystring));
-    });
+    $server = 'mysql:host=localhost;dbname=registrar';
+    $username = 'root';
+    $password = 'root';
+    $DB = new PDO($server, $username, $password);
 
-    return $app;
-    ?>
+    $app->register(new Silex\Provider\TwigServiceProvider(), array(
+        'twig.path' => __DIR__.'/../views'
+    ));
+
+    use Symfony\Component\HttpFoundation\Request;
+    Request::enableHttpMethodParameterOverride();
+
+    $app->get("/", function() use ($app) {
+        return $app['twig']->render('index.html.twig', array('courses' => Course::getAll(), 'students' => Student::getAll()));
+   });
+
+   $app->get("/courses", function() use($app){
+       return $app['twig']->render('courses.html.twig', array('courses'=> Course::getAll(), 'students'=> Student::getAll()));
+   });
+
+        return $app;
+?>

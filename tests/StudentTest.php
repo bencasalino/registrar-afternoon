@@ -19,15 +19,15 @@
     {
         protected function tearDown()
         {
-            //Course::deleteAll();
-        //    Student::deleteAll();
+            Course::deleteAll();
+            Student::deleteAll();
         }
 
         function testGetStudentName()
         {
             //Arrange
             $student_name = "Johnny Mcfly";
-            $date_enrollment = "12-12-2012";
+            $date_enrollment = "2014-08-08";
             $test_student = new Student($student_name, $date_enrollment);
 
             //Act
@@ -41,7 +41,7 @@
         {
             //Arrange
             $student_name = "MARTY Mcfly";
-            $date_enrollment = "12-12-2012";
+            $date_enrollment = "2014-08-08";
             $test_student = new Student($student_name, $date_enrollment);
 
             //Act
@@ -55,10 +55,9 @@
         {
             //Arrange
             $student_name = "Mike Laser";
-            $date_enrollment = "10-10-2015";
-            $test_student = new Student($student_name, $date_enrollment);
-
-
+            $date_enrollment = "2014-08-15";
+            $id = 3;
+            $test_student = new Student($student_name, $date_enrollment, $id);
             //Act
             $test_student->save();
 
